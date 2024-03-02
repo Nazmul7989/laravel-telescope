@@ -5,14 +5,14 @@ You may use the Composer package manager to install Telescope into your Laravel 
 ``` 
 composer require laravel/telescope
 ```
-After installing Telescope, publish its assets and  run the migrate command in order to create the tables needed to store Telescope's data:
+After installing Telescope, publish its assets and  run the `migrate` command in order to create the tables needed to store Telescope's data:
 ``` 
 php artisan telescope:install
  
 php artisan migrate
 ```
 ### Migration Customization
-If you are not going to use Telescope's default migrations, you should call the `Telescope::ignoreMigrations` method in the register method of your application's `App\Providers\AppServiceProvider` class. You may export the default migrations using the following command: 
+If you are not going to use Telescope's default migrations, you should call the `Telescope::ignoreMigrations` method in the `register` method of your application's `App\Providers\AppServiceProvider` class. You may export the default migrations using the following command: 
 ``` 
 php artisan vendor:publish --tag=telescope-migrations
 ```
@@ -27,7 +27,7 @@ php artisan telescope:install
  
 php artisan migrate
 ```
-After running `telescope:install`, you should remove the `TelescopeServiceProvider` service provider registration from your application's `config/app.php` configuration file. Instead, manually register Telescope's service providers in the register method of your `App\Providers\AppServiceProvider` class. We will ensure the current environment is local before registering the providers:
+After running `telescope:install`, you should remove the `TelescopeServiceProvider` service provider registration from your application's `config/app.php` configuration file. Instead, manually register Telescope's service providers in the `register` method of your `App\Providers\AppServiceProvider` class. We will ensure the current environment is local before registering the providers:
 
 ``` 
 /**
