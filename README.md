@@ -74,3 +74,5 @@ protected function gate(): void
     });
 }
 ```
+
+### See [Laravel Telescpoe](https://laravel.com/docs/10.x/telescope) for more details
